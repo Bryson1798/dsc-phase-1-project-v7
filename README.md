@@ -1,9 +1,11 @@
 # Box Office Analysis: Identifying Best Performing Movie Genres for Microsoft's New Studio
 
 ## Overview
-This project analyzes the datasets from 3 movie websites namely, [Box Office Mojo](https://www.boxofficemojo.com/) , [TheMovieDB](https://www.themoviedb.org/) and [The Numbers](https://www.the-numbers.com/). The 3 datasets are merged into one pandas DataFrame to enable a more indepth analysis and better findings with regards to the top/best performing movie genres in the Box Office. Microsoft can use the findings from this analysis to help decide what type of films to create so as to stay at par in the movie industry.
+
+This project analyzes the datasets from 3 movie websites namely, [Box Office Mojo](https://www.boxofficemojo.com/) , [TheMovieDB](https://www.themoviedb.org/) and [The Numbers](https://www.the-numbers.com/). The 3 datasets are merged into one pandas DataFrame to enable a more in-depth analysis and better findings with regards to the top/best performing movie genres in the Box Office. Microsoft can use the findings from this analysis to help decide what type of films to create so as to stay at par in the movie industry.
 
 ## Business Understanding
+
 Based on the business problem, which is, Microsoft wants to get in on the fun of creating movies/original video content but they have no knowledge of creating movies, I have formulated 5 business questions whereby I will use my dataset to extract meaningful findings which can be translated into actionable insights for the Head of Microsoft's new movie studio to help him/her decide on what types of films to create. These business questions are:
 
 1. What are the top 4 best performing genres of movies at the box office?
@@ -18,20 +20,22 @@ Based on the business problem, which is, Microsoft wants to get in on the fun of
 4. How does the release time of a movie contribute to its success?
 
 ## Data Understanding 
+
 The data sources for this analysis are 3 websites namely:
  - [Box Office Mojo](https://www.boxofficemojo.com/) 
  - [TheMovieDB](https://www.themoviedb.org/) 
  - [The Numbers](https://www.the-numbers.com/)
 
-We therefore have 3 separate CSV data files:
+I therefore have 3 separate CSV data files:
  
  - `bom.movie_gross.csv.gz`: each record represents a movie title, with attributes of that movie (eg. `domestic_gross`).
- - `tmdb.movies.csv.gz`: each record represents a mvoie title as well, with attributes such as `release_date`.
+ - `tmdb.movies.csv.gz`: each record represents a movie title as well, with attributes such as `release_date`.
  - `tn.movie_budgets.csv.gz`: each record represents a movie title as well, with attributes such as `production_budget`. 
  
-Also, note that the data may not reflect the most-up-to-date trends and performances in the movie industry since its scope is upto 2019. 
+Also, note that the data may not reflect the most-up-to-date trends and performances in the movie industry since its scope is upto 2020. 
 
 ## Performing Aggregations to answer Business Question no.1
+
 The business question:
 - What are the top 4 best performing types of movies at the box office?
 
@@ -51,70 +55,99 @@ To come up with a final top 4, I will consider the top genres across multiple me
 
 In addition, you can get the definitions of the various `genre_ids` values at [TheMovieDB `genre_ids` definitions](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee)
 
-![Visualization](visualization1.png)
+ ![Visualization](visualization1.png)
+
 Using the definitions of the various `genre_ids` values at [TheMovieDB `genre_ids` definitions](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee); 
 
-From the above results, the top 5 `genre_ids` sorted by `domestic_gross_2` are:
- 1. [35] - which represents **Comedy** genre
- 2. [28, 12, 878] - which represents a combination of **Action, Adventure & Science Fiction** genres
- 3. [18] - which represents **Drama** genre
- 4. [28, 12, 14] which represents a combination of **Action, Adventure & Fantasy** genres
- 5. [28, 12, 14, 878] which represents a combination of **Action, Adventure, Fantasy & Science Fiction** genres
- 
-![Visualization](visualization2.png)
+From the above results, the top 5 `genre` sorted by `domestic_gross_2` are:
+ 1. **Comedy** 
+ 2. **Action, Adventure & Science Fiction** 
+ 3. **Drama**
+ 4. **Action, Adventure & Fantasy**
+ 5. **Action, Adventure, Fantasy & Science Fiction**
+  
+ ![Visualization](visualization2.png)
+
 Using the definitions of the various `genre_ids` values provided at [TheMovieDB `genre_ids` definitions](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee); 
 
 From the above results, the top 5 `genre_ids` sorted by `worldwide_gross` are:
- 1. [28, 12, 878] - which represents a combination of **Action, Adventure & Science Fiction** genres
- 2. [35] - which represents **Comedy** genre
- 3. [28, 12, 14] - which represents a combination of **Action, Adventure & Fantasy** genres
- 4. [28, 12, 14, 878] - which represents a combination of **Action, Adventure, Fantasy & Science Fiction** genres
- 5. [18] - which represents **Drama** genre
+ 1. **Action, Adventure & Science Fiction**
+ 2. **Comedy**
+ 3. **Action, Adventure & Fantasy**
+ 4. **Action, Adventure, Fantasy & Science Fiction**
+ 5. **Drama**
+  
+ ![Visualization](visualization3.png)
 
-![Visualization](visualization3.png)
 Using the definitions of the various `genre_ids` values provided at [TheMovieDB `genre_ids` definitions](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee); 
 
 From the above results, the top 5 `genre_ids` sorted by `popularity` are:
- 1. [12, 28, 14] - which represents a combination of **Adventure, Action & Fantasy** genres
- 2. [12] - which represents **Adventure** genre
- 3. [28, 12, 878, 18] - which represents a combination of **Action, Adventure, Science Fiction & Drama** genres
- 4. [28, 12, 878, 35] - which represents a combination of **Action, Adventure, Science Fiction & Comedy** genres
- 5. [28, 12, 878, 14] - which represents a combination of **Action, Adventure, Science Fiction & Fantasy** genres
+ 1. **Adventure, Action & Fantasy**
+ 2. **Adventure**
+ 3. **Action, Adventure, Science Fiction & Drama**
+ 4. **Action, Adventure, Science Fiction & Comedy**
+ 5. **Action, Adventure, Science Fiction & Fantasy**
+ 
+ ![Visualization](visualization4.png)
 
-![Visualization](visualization4.png)
 Using the definitions of the various `genre_ids` values provided at [TheMovieDB `genre_ids` definitions](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee); 
 
 From the above results, the top 5 `genre_ids` sorted by `vote_count` are:
- 1. [28, 12, 878] - which represents a combination of **Action, Adventure & Science Fiction** genres
- 2. [35] - which represents **Comedy** genre
- 3. [18] - which represents **Drama** genre
- 4. [28, 12, 14] - which represents a combination of **Action, Adventure & Fantasy** genres
- 5. [28, 878, 12] - which represents a combination of **Action, Science Fiction & Adventure** genres
+ 1. **Action, Adventure & Science Fiction**
+ 2. **Comedy**
+ 3. **Drama**
+ 4. **Action, Adventure & Fantasy**
+ 5. **Action, Science Fiction & Adventure**
+ 
+ ![Visualization](visualization5.png)
 
-![Visualization](visualization5.png)
 Using the definitions of the various `genre_ids` values provided at [TheMovieDB `genre_ids` definitions](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee); 
 
-From the above results, the top 4 `genre_ids` sorted by `vote_average` are:
- 1. [16, 10751, 35, 12, 14] - which represents a combination of **Animation, Family, Comedy, Adventure & Fantasy** genres
- 2. [18, 99] - which represents a combination of **Drama & Documentary** genres
- 3. [36, 18, 53, 10752] - which represents a combination of **History, Drama, Thriller & War** genres
- 4. [18, 36, 10752] - which represents a combination of **Drama, History & War** genres
+From the above results, the top 5 `genre_ids` sorted by `vote_average` are:
+ 1. **Drama & Documentary**
+ 2. **Animation, Family, Comedy, Adventure & Fantasy**
+ 3. **Drama, History & War**
+ 4. **History, Drama, Thriller & War**
+ 5. **Drama, Comedy, Animation & Family**
  
+ 
+## Creating a correlation matrix to answer Business Question no.2
+
+The business question:
+
+- What is the relationship between production budget and the success of a movie both domestically and worldwide?
+
+Below I create a correlation matrix for the features which are indicators of a successful movie in the Box Office
+
  ![Visualization](visualization6.png)
+ 
 - The correlation coefficient between `production_budget` and `worldwide_gross` is **0.78**; and between `production_budget` and `domestic_gross_2` is **0.7**. Both figures indicate a strong positive correlation between the variables. This means that as `production_budget` increases, `worldwide_gross` and `domestic_gross_2` tend to increase as well. Therefore, the production budget allocated to a movie production may be a good indicator of its success or failure in the Box Office.
 
- 
+
+## Performing Aggregations and Engineering a new feature `market_share` to answer Business Question no.3 
+
  ![Visualization](visualization7.png)
+ 
 The `market_share` is calculated as the sum of a studio's domestic revenue divided by the total domestic revenue of all the studios multiplied by 100%.
 Based on the above analysis, BV Studio has the highest domestic and worldwide gross revenue, the highest total vote count, and the highest mean popularity. BV Studio has a market share of 17.6%, followed by Uni. with 14.5% and Fox with 12.7%. This suggests that BV Studio is the clear leader in many metrics. This provides insight into the competitive landscape of the movie industry based on the chosen metrics. 
  
  ![Visualization](visualization8.png)
-The stacked bar plot shows the domestic and worldwide gross revenue of the top 10 movie studios, broken down by region,i.e.Domestic revenue and Worldwide reveneu. Each bar represents a studio, and is divided into two sections: blue for domestic gross revenue, and orange for worldwide gross revenue.
+ 
+ The stacked bar plot shows the domestic and worldwide gross revenue of the top 10 movie studios, broken down by region,i.e.Domestic revenue and Worldwide reveneu. Each bar represents a studio, and is divided into two sections: blue for domestic gross revenue, and orange for worldwide gross revenue.
 
 The height of each bar represents the total gross revenue for that studio, and the width of each section represents the proportion of that revenue coming from the domestic or worldwide market. For example, the tallest bar represents BV Studio, and we can see that the majority of its revenue comes from the international market.
 
+## Performing Aggregations to answer Business Question no.4
+
+The business question:
+-  How does the release time of a movie contribute to its success?
+
+Here I will be using the `worldwide_gross` and `domestic_gross_2` variables as my units of measurement to depict the revenues generated in the different months and hence determine when it is suitable to release a movie, thereby increasing its chances of success.
+
  ![Visualization](visualization9.png)
+ 
  ![Visualization](visualization10.png)
+ 
 The above plots show the average worldwide gross and domestic gross by release month for the movies in the dataset.
 The x-axis shows the months of the year, and the y-axis shows the average gross in billion dollars. Each bar represents the average gross for a particular month.
 The "Worldwide Gross by Release Month" plot shows that the months of May, June and July have the highest average worldwide gross, while the months of September and October have the lowest.
