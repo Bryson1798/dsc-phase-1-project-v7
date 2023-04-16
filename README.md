@@ -32,7 +32,49 @@ I therefore have 3 separate CSV data files:
  - `tmdb.movies.csv.gz`: each record represents a movie title as well, with attributes such as `release_date`.
  - `tn.movie_budgets.csv.gz`: each record represents a movie title as well, with attributes such as `production_budget`. 
  
-Also, note that the data may not reflect the most-up-to-date trends and performances in the movie industry since its scope is upto 2020. 
+Also, note that the data may not reflect the most-up-to-date trends and performances in the movie industry since its scope is upto 2020.
+
+### Univariate Analysis 
+
+#### i) A histogram to show distribution of vote averages
+
+ ![Visualization](visualization11).png
+ 
+From the histogram above, I can observe that a majority of movies received a vote average of 6 to 6.5.
+ 
+#### ii) A kernel density plot to show the distribution of production budgets 
+ 
+ ![Visualization](visualization12).png
+ 
+From the above kernel density, the peak denotes the value of the production budget that is most frequently observed among the movies. I can observe that the peak of the distribution is skewed to the right, this suggests that a majority of movies have lower production budgets, with fewer movies having higher production budgets.
+
+#### iii) A histogram to show the distribution of vote count
+ 
+ ![Visualization](visualization13).png
+ 
+From the above histogram, I can observe that a majority of the movies have low vote counts since the peak of the histogram is skewed to the right.
+
+### Bivariate Analysis 
+
+Here I will be generating plots to describe the relationships between different features/variables.
+
+#### i) A scatter plot showing the relationship between `worldwide_gross` and `domestic_gross`
+
+ ![Visualization](visualization14).png
+ 
+Using the line of best fit from the above scatter plot, I can observe and conclude that there is a positive correlation between `worldwide_gross` and `domestic_gross_2` variables. This means that as the domestic revenue from a movie increases, its worldwide revenue increases too.
+
+#### ii) A box plot showing the distribution of `production_budget`, `domestic_gross_2` and `worldwide_gross` revenues.
+
+ ![Visualization](visualization15).png
+ 
+The boxplot above shows the distribution of `production_budget`, `domestic_gross_2` and `worldwide_gross` variables. There's quite a vast number of outliers in all the three variables. But given that this is a Movies dataset, I will keep the outliers, since they are representative of the real world data whereby we can have some Box Office movies performing exceptionally well in the market.
+
+#### iii) A bar plot showing the Top 20 Studios by the number of movies produced
+ 
+ ![Visualization](visualization16).png
+ 
+The bar plot above shows the distribution of number of movies produced by studios. From the bar plot, it is clear that Uni. Studio takes the lead in movie production followed by Fox and WB. But it is important to note that producing more movies doesn't necessarily mean that it is the best performing studio. Other factors such as return on investment must be considered too. 
 
 ## Performing Aggregations to answer Business Question no.1
 
@@ -59,7 +101,7 @@ In addition, you can get the definitions of the various `genre_ids` values at [T
 
 Using the definitions of the various `genre_ids` values at [TheMovieDB `genre_ids` definitions](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee); 
 
-From the above results, the top 5 `genre` sorted by `domestic_gross_2` are:
+From the above results, the top 5 `genres` sorted by `domestic_gross_2` are:
  1. **Comedy** 
  2. **Action, Adventure & Science Fiction** 
  3. **Drama**
@@ -81,7 +123,7 @@ From the above results, the top 5 `genre_ids` sorted by `worldwide_gross` are:
 
 Using the definitions of the various `genre_ids` values provided at [TheMovieDB `genre_ids` definitions](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee); 
 
-From the above results, the top 5 `genre_ids` sorted by `popularity` are:
+From the above results, the top 5 `genres` sorted by `popularity` are:
  1. **Adventure, Action & Fantasy**
  2. **Adventure**
  3. **Action, Adventure, Science Fiction & Drama**
@@ -92,7 +134,7 @@ From the above results, the top 5 `genre_ids` sorted by `popularity` are:
 
 Using the definitions of the various `genre_ids` values provided at [TheMovieDB `genre_ids` definitions](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee); 
 
-From the above results, the top 5 `genre_ids` sorted by `vote_count` are:
+From the above results, the top 5 `genres` sorted by `vote_count` are:
  1. **Action, Adventure & Science Fiction**
  2. **Comedy**
  3. **Drama**
@@ -103,7 +145,7 @@ From the above results, the top 5 `genre_ids` sorted by `vote_count` are:
 
 Using the definitions of the various `genre_ids` values provided at [TheMovieDB `genre_ids` definitions](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee); 
 
-From the above results, the top 5 `genre_ids` sorted by `vote_average` are:
+From the above results, the top 5 `genres` sorted by `vote_average` are:
  1. **Drama & Documentary**
  2. **Animation, Family, Comedy, Adventure & Fantasy**
  3. **Drama, History & War**
@@ -168,7 +210,7 @@ This analysis leads to four **recommendations** that will enable Microsoft get i
  Also, they can play around the genres creatively and come up with something a bit unique, for example, a combination of **Action, Comedy & Drama** or even **Science Fiction, Adventure & Comedy** to see the response and reaction from the movie lovers. 
 
 
-2. Based on the findings of strong positive correlation between production budget and domestic gross, and production budget and worldwide gross, for the genres stated above in the first recommendation, the Head of Microsoft's new movie studio can liase with the finance department and ensure that sufficient budgetary allocation is made to film production. This would enable the several aspects involved in film production to be taken care of sufficiently, for instance;
+2. Based on the findings of strong positive correlation between production budget and domestic gross, and production budget and worldwide gross, for the genres stated above in the first recommendation, the Head of Microsoft's new movie studio can liaise with the finance department and ensure that sufficient budgetary allocation is made to film production. This would enable the several aspects involved in film production to be taken care of sufficiently, for instance;
  - Production equipment: Getting the latest equipment and editing tools is key to producing high quality video content.
 
  - Visuals and Sound: The visual elements of a movie are critical in creating an immersive and engaging experience for viewers. This includes everything from the cinematography and special effects to the costumes and set design. A good soundtrack can help set the tone of a film and enhance the emotional impact of key scenes. 
@@ -184,4 +226,12 @@ This analysis leads to four **recommendations** that will enable Microsoft get i
  - Leveraging innovative marketing and distribution strategies to reach wider audiences. 
  - Additionally, they could explore new combinations of the popular genres as stated in the first recommendation.
  
- 4. Based on the findings of the best months to release a movie being May, June and July, the Microsoft new mvoie studio should consider releasing movies around this time. There could be various factors that contribute to the high revenues in May, June and July. One possibility is that these months fall within the summer blockbuster season, which typically runs from May to August, where studios release highly anticipated movies that are expected to perform well at the box office, as well as audience availability. Therefore, if Microsoft takes advantage of this period, the movies released are likely to yield higher gross revenues.
+ 4. Based on the findings of the best months to release a movie being May, June and July, the Microsoft new movie studio should consider releasing movies around this time. There could be various factors that contribute to the high revenues in May, June and July. One possibility is that these months fall within the summer blockbuster season, which typically runs from May to August, where studios release highly anticipated movies that are expected to perform well at the box office, as well as audience availability. Therefore, if Microsoft takes advantage of this period, the movies released are likely to yield higher gross revenues.
+ 
+ # Next Steps
+
+Further analyses could yield additional insights to further improve decision-making for the movie genres to produce in the new Microsoft studio:
+
+- A further analysis into the directors/actors in the film industry. This analysis could provide insights on whom to hire during production of movies. Involving highly rated/successful directors & actors in production increases the probability of success for a movie.
+
+- A further analysis into the reviews made my the public by conducting sentiment analysis on social media and other online platforms to gauge the public's reaction to movie trailers, posters, and other promotional materials.This analysis can help Microsoft studio identify potential issues with marketing campaigns or aspects of the movie that may not be well-received by the audience and hence make adjustments to its marketing and production strategies in real-time, potentially increasing the chances of success for its movies.
