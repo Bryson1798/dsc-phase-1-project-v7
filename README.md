@@ -38,19 +38,19 @@ Also, note that the data may not reflect the most-up-to-date trends and performa
 
 #### i) A histogram to show distribution of vote averages
 
- ![Visualization](visualization11).png
+ ![Visualization](visualization11.png)
  
 From the histogram above, I can observe that a majority of movies received a vote average of 6 to 6.5.
  
 #### ii) A kernel density plot to show the distribution of production budgets 
  
- ![Visualization](visualization12).png
+ ![Visualization](visualization12.png)
  
 From the above kernel density, the peak denotes the value of the production budget that is most frequently observed among the movies. I can observe that the peak of the distribution is skewed to the right, this suggests that a majority of movies have lower production budgets, with fewer movies having higher production budgets.
 
 #### iii) A histogram to show the distribution of vote count
  
- ![Visualization](visualization13).png
+ ![Visualization](visualization13.png)
  
 From the above histogram, I can observe that a majority of the movies have low vote counts since the peak of the histogram is skewed to the right.
 
@@ -60,19 +60,19 @@ Here I will be generating plots to describe the relationships between different 
 
 #### i) A scatter plot showing the relationship between `worldwide_gross` and `domestic_gross`
 
- ![Visualization](visualization14).png
+ ![Visualization](visualization14.png)
  
 Using the line of best fit from the above scatter plot, I can observe and conclude that there is a positive correlation between `worldwide_gross` and `domestic_gross_2` variables. This means that as the domestic revenue from a movie increases, its worldwide revenue increases too.
 
 #### ii) A box plot showing the distribution of `production_budget`, `domestic_gross_2` and `worldwide_gross` revenues.
 
- ![Visualization](visualization15).png
+ ![Visualization](visualization15.png)
  
 The boxplot above shows the distribution of `production_budget`, `domestic_gross_2` and `worldwide_gross` variables. There's quite a vast number of outliers in all the three variables. But given that this is a Movies dataset, I will keep the outliers, since they are representative of the real world data whereby we can have some Box Office movies performing exceptionally well in the market.
 
 #### iii) A bar plot showing the Top 20 Studios by the number of movies produced
  
- ![Visualization](visualization16).png
+ ![Visualization](visualization16.png)
  
 The bar plot above shows the distribution of number of movies produced by studios. From the bar plot, it is clear that Uni. Studio takes the lead in movie production followed by Fox and WB. But it is important to note that producing more movies doesn't necessarily mean that it is the best performing studio. Other factors such as return on investment must be considered too. 
 
