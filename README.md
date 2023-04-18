@@ -38,19 +38,19 @@ Also, note that the data may not reflect the most-up-to-date trends and performa
 
 #### i) A histogram to show distribution of vote averages
 
- ![Visualization](visualization1.png)
+ ![Visualization](Visualizations/visualization1.png)
  
 From the histogram above, I can observe that a majority of movies received a vote average of between 6 and 6.5.
  
 #### ii) A kernel density plot to show the distribution of production budgets 
  
- ![Visualization](visualization2.png)
+ ![Visualization](Visualizations/visualization2.png)
  
 From the above kernel density, the peak denotes the value of the production budget that is most frequently observed among the movies. I can observe that the peak of the distribution is skewed to the right, this suggests that a majority of movies have lower production budgets, with fewer movies having higher production budgets.
 
 #### iii) A histogram to show the distribution of vote count
  
- ![Visualization](visualization3.png)
+ ![Visualization](Visualizations/visualization3.png)
  
 From the above histogram, I can observe that a majority of the movies have low vote counts since the peak of the histogram is skewed to the right.
 
@@ -60,19 +60,19 @@ Here I will be generating plots to describe the relationships between different 
 
 #### i) A scatter plot showing the relationship between `worldwide_gross` and `domestic_gross`
 
- ![Visualization](visualization4.png)
+ ![Visualization](Visualizations/visualization4.png)
  
 Using the line of best fit from the above scatter plot, I can observe and conclude that there is a strong positive correlation between `worldwide_gross` and `domestic_gross_2` variables. This means that as the domestic revenue from a movie increases, its worldwide revenue increases too.
 
 #### ii) A box plot showing the distribution of `production_budget`, `domestic_gross_2` and `worldwide_gross` revenues.
 
- ![Visualization](visualization5.png)
+ ![Visualization](Visualizations/visualization5.png)
  
 The boxplot above shows the distribution of `production_budget`, `domestic_gross_2` and `worldwide_gross` variables. There's quite a vast number of outliers in all the three variables. But given that this is a Movies dataset, I will keep the outliers, since they are representative of the real world data whereby we can have some Box Office movies performing exceptionally well in the market.
 
 #### iii) A bar plot showing the Top 20 Studios by the number of movies produced
  
- ![Visualization](visualization6.png)
+ ![Visualization](Visualizations/visualization6.png)
  
 The bar plot above shows the distribution of number of movies produced by studios. From the bar plot, it is clear that Uni. Studio takes the lead in movie production followed by Fox and WB. But it is important to note that producing more movies doesn't necessarily mean that it is the best performing studio. Other factors such as return on investment must be considered too. 
 
@@ -100,7 +100,7 @@ In addition, you can get the definitions of the various `genre_ids` values at [T
 
 #### i) Group the DataFrame by `genres` and sum `domestic_gross_2`
 
- ![Visualization](visualization7.png)
+ ![Visualization](Visualizations/visualization7.png)
 
 Using the definitions of the various `genre_ids` values at [TheMovieDB `genre_ids` definitions](https://www.themoviedb.org/talk/5daf6eb0ae36680011d7e6ee); 
 
@@ -113,7 +113,7 @@ From the above results, the top 5 `genres` sorted by `domestic_gross_2` are:
 
 #### ii) Group the DataFrame by `genres` and sum `worldwide_gross`
   
- ![Visualization](visualization8.png)
+ ![Visualization](Visualizations/visualization8.png)
 
 From the above results, the top 5 `genres` sorted by `worldwide_gross` are:
 1. **Action, Adventure, Science Fiction**               
@@ -124,7 +124,7 @@ From the above results, the top 5 `genres` sorted by `worldwide_gross` are:
 
 #### iii) Group the DataFrame by `genres` and mean of `popularity`
   
- ![Visualization](visualization9.png)
+ ![Visualization](Visualizations/visualization9.png)
 
 From the above results, the top 5 `genres` sorted by `popularity` are:
 1. **Adventure**                                         
@@ -135,7 +135,7 @@ From the above results, the top 5 `genres` sorted by `popularity` are:
 
 #### iv) Group the DataFrame by `genres` and sum `vote_count`
  
- ![Visualization](visualization10.png)
+ ![Visualization](Visualizations/visualization10.png)
 
 From the above results, the top 5 `genres` sorted by `vote_count` are:
  1. **Action, Adventure, Science Fiction**
@@ -146,7 +146,7 @@ From the above results, the top 5 `genres` sorted by `vote_count` are:
  
 #### v) Group the DataFrame by `genres` and mean of `vote_average` 
  
- ![Visualization](visualization11.png)
+ ![Visualization](Visualizations/visualization11.png)
 
 From the above results, the top 5 `genres` sorted by `vote_average` are:
 1. **Documentary, Drama**                      
@@ -169,7 +169,7 @@ The business question:
 
 Below I create a correlation matrix for the features which are indicators of a successful movie in the Box Office
 
- ![Visualization](visualization12.png)
+ ![Visualization](Visualizations/visualization12.png)
  
 - The correlation coefficient between `production_budget` and `worldwide_gross` is **0.78**; and between `production_budget` and `domestic_gross_2` is **0.7**. Both figures indicate a strong positive correlation between the variables. This means that as `production_budget` increases, `worldwide_gross` and `domestic_gross_2` tend to increase as well. Therefore, the production budget allocated to a movie production is a good indicator of its success or failure in the Box Office in terms of revenue.
 
@@ -184,12 +184,12 @@ The business question:
  
 I find this to be an important aspect because as Microsoft dives into the movie industry, it's imperative they understand who they are going to be competing against in terms of capturing the audience's attention. 
 
- ![Visualization](visualization13.png)
+ ![Visualization](Visualizations/visualization13.png)
  
 The `market_share` is calculated as the sum of a studio's domestic revenue divided by the total domestic revenue of all the studios multiplied by 100%.
 Based on the above analysis, BV Studio has the highest domestic and worldwide gross revenue, the highest total vote count, and the highest mean popularity. BV Studio has a market share of 17.6%, followed by Uni. with 14.4% and Fox with 12.7%. This suggests that BV Studio is the clear leader in many metrics. This provides insight into the competitive landscape of the movie industry based on the chosen metrics. 
  
- ![Visualization](visualization14.png)
+ ![Visualization](Visualizations/visualization14.png)
  
 The stacked bar plot shows the domestic and worldwide gross revenue of the top 10 movie studios, broken down by region,i.e.Domestic revenue and Worldwide revenue. Each bar represents a studio, and is divided into two sections: blue for domestic gross revenue, and orange for worldwide gross revenue.
 
@@ -206,9 +206,9 @@ The business question:
 
 Here I will be using the `worldwide_gross` and `domestic_gross_2` variables as my units of measurement to depict the revenues generated in the different months and hence determine when it is suitable to release a movie, thereby increasing its chances of success.
 
- ![Visualization](visualization15.png)
+ ![Visualization](Visualizations/visualization15.png)
  
- ![Visualization](visualization16.png)
+ ![Visualization](Visualizations/visualization16.png)
  
 The above plots show the average worldwide gross and domestic gross by release month for the movies in the dataset.
 The x-axis shows the months of the year, and the y-axis shows the average gross in billion dollars. Each bar represents the average gross for a particular month.
